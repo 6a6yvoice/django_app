@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<link rel="stylesheet" href="{%static 'main.css'%}">
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+      <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
+</head>
+
+<body>
+    <form action="" method="post">
+        {%csrf_token%}
+        <h2> Регистрация</h2>
+        <label> Имя пользователя</label>
+        <input type="text" name="user" required>
+        <label> Email</label>
+        <input type="email" required>
+        <label> Номер телефона </label>
+        <input type="number" name="phone" required>
+        <label> Имя </label>
+        <input type="text" name="name" required>
+        <label> Фамилия </label>
+        <input type="text" name="surname" required>
+        <label> Пароль </label>
+        <input type="password" name="password" required>
+        <label> Подтвердите Пароль</label>
+        <input type="password" required>
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+    
+</body>
+
+</html>
